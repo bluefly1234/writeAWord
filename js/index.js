@@ -3,8 +3,8 @@ function Tablet(domId, options){
     this.canvas = document.querySelectorAll(domId)[0]
     this.cxt = this.canvas.getContext('2d')
     this.options = Object.assign(
-        {"height": 500,  //canvas高度
-         "width": 500,  // canvas宽度
+        {"height": 660,  //canvas高度
+         "width": 660,  // canvas宽度
          "lineWidth": 25,  // 写字笔画宽度
          "strokeStyle": 'black', // 默认写字颜色
          "borderWidth": 4 // canvas边框
@@ -69,7 +69,7 @@ Tablet.prototype = {
         var minV = 0.1
         var v = s / t
         console.log(v)
-        var resultLineWidth, realLineWith = (window.screen.width >768 ? this.options.lineWidth : 20)
+        var resultLineWidth, realLineWith = (window.screen.width >= 768 ? this.options.lineWidth : 20)
         if (v <= minV) resultLineWidth = realLineWith
         else if (v >= maxV) resultLineWidth = 1
         else
@@ -158,7 +158,7 @@ Tablet.prototype = {
     function $(s){
         return document.querySelectorAll(s)
     }
-    var Tablet = new Tablet('#canvas', {width: 500, lineWidth: 30,"strokeStyle": 'black'})
+    var Tablet = new Tablet('#canvas', {width: 640, lineWidth: 30,"strokeStyle": 'black'})
     var clearBtn = $('#clearBtn')[0]
     var colors = $('.color')
     clearBtn.onclick = function() {
@@ -201,7 +201,9 @@ Tablet.prototype = {
         imgBox.style.display = 'none'
         imgBox.removeChild(img)
     }
-
+    if(window.screen.height >= 768 && window.screen.width > 1024) {
+        alert('温馨提示：如果方格不能在屏幕中完全展示,请按F11全屏')
+    }
 }
 
 CanvasRenderingContext2D.prototype.dashedLineTo = function (fromX, fromY, toX, toY, pattern) {

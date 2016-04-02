@@ -1,0 +1,225 @@
+html, body {
+            height: 100%;
+        }
+        body, div, span, p, button {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            overflow: hidden;
+            background: -webkit-gradient(linear, 100% 100%, 100% 60%, /* 起点到结束 */
+                color-stop(0.14,rgb(255,114, 0)), 
+                color-stop(1,rgb(255,255,255)) );
+        }
+        #canvas {
+            display: block;
+            margin: 10px auto;
+        }
+        
+        .oprate-bar {
+            margin: 20px auto;
+        }
+        .oprate-bar:after {
+            content: "";
+            clear: both;
+        }
+        .colors {
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            text-align: center
+        }
+        .color {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 5px 10px;
+        }
+        .selected {
+            border: 3px solid red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .black {
+            background-color: black;
+        }
+        .red {
+            background-color: red;
+        }
+        .btns {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            width: 40%;
+            margin: 0 5px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 0 10px
+        }
+
+        /*生成预览图片的容器*/
+        #imgBox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            display: none;
+            transition: width 1s;
+            background-color: #FFF;
+        }
+        img {
+            margin: 20px auto;
+            display: block;
+        }
+        .close-box {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+        }
+        .tips {
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            color: #77CA0E;
+        }
+        #closeBtn {
+            display: block;
+            margin: 10px auto;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 0 10px;
+        }
+        /*pad 竖屏状态 */
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) 
+        and (orientation : portrait) {
+
+            .color {
+                width: 50px;
+                height: 50px;
+            }
+            .btn {
+                height: 50px;
+                font-size: 22px;
+            }
+             .tips {
+                font-size: 22px;
+            }
+            #closeBtn {
+                width: 160px;
+                height: 50px;
+                font-size: 24px;
+            }
+            body {
+                background-color: lightblue;
+            }
+        }
+        /*ipad横屏*/
+        @media only screen
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) 
+        and (orientation : landscape) {
+            #canvas {
+                position: absolute;
+                left: 30px;
+                top: 20px;
+            }
+             #closeBtn {
+                bottom: 70px;
+                left: 85%;
+            }
+            .oprate-bar {
+                width: 240px;
+                height: 400px;
+                position: absolute;
+                right: 40px;
+            }
+            .color {
+                width: 100%;
+                margin: 7px 0;
+                height: 40px;
+            }
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+            #imgBox img {
+                position: absolute;
+                left: 30px;
+                top: 20px;
+            }
+            .close-box {
+                width: 140px;
+                right: 10px;
+                bottom: 80px;
+            }
+            .tips {
+                writing-mode: vertical-rl;
+                font-size: 20px;
+            }
+            body {
+                background-color: yellow;
+            }
+        }
+        /*pc*/
+        @media only screen and (min-device-width : 1025px) {
+            body {
+                overflow: hidden;
+            }
+            #canvas {
+                position: absolute;
+                left: 30px;
+                top: 0px;
+            }
+             #closeBtn {
+                bottom: 70px;
+                left: 85%;
+            }
+            .oprate-bar {
+                width: 240px;
+                height: 400px;
+                position: absolute;
+                right: 60px;
+            }
+            .color {
+                width: 100%;
+                margin: 7px 0;
+                height: 40px;
+            }
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+            #imgBox img {
+                position: absolute;
+                left: 30px;
+                top: 20px;
+            }
+            .close-box {
+                width: 140px;
+                right: 10px;
+                bottom: 80px;
+            }
+            .tips {
+                writing-mode: vertical-rl;
+                font-size: 20px;
+            }
+        }
