@@ -37,7 +37,10 @@ html, body {
             margin: 5px 10px;
         }
         .selected {
-            border: 3px solid red;
+            border: 3px solid blueviolet;
+            -webkit-box-shadow: 0 0 20px blueviolet;
+            -moz-box-shadow: 0 0 20px blueviolet;
+            box-shadow: 0 0 20px blueviolet;
         }
         .yellow {
             background-color: yellow;
